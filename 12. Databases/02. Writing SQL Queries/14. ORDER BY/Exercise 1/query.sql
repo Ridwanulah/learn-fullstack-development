@@ -3,3 +3,6 @@
 		order the table by condition in descending order
 		and by price in ascending order
 */
+
+SELECT brand, model, condition, price FROM cars
+	ORDER BY condition DESC, price ASC

@@ -4,3 +4,8 @@
 		and the condition is 3 or higher
 		and sold is false
 */
+
+SELECT brand, model, condition, year, sold, FROM
+	WHERE brand IN (1961, 1963, 1965, 1967, 1969)
+	AND conditon >= 3
+	AND sold IS FALSE

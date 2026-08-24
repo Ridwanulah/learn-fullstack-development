@@ -10,3 +10,13 @@
 		only show years where more than one car has been sold from that year
 	order the result by car_count
 */
+SELECT
+	year,
+	count(year) AS car_count,
+	MAX(price),
+	MIN(price)
+	FROM cars
+	WHERE sold IS TRUE
+	GROUP BY year
+	HAVING car_count > 1
+	ORDER BY car_count;

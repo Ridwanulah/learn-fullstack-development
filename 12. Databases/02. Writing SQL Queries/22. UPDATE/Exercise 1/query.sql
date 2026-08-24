@@ -4,3 +4,7 @@
 		and the price to 465000
 */
 
+UPDATE cars SET(
+	brand, model, year, price, color, condition, sold
+) INTO(
+	'Aston Martin', 'DB4', 1961, 465000, 'Red', 5, 0)

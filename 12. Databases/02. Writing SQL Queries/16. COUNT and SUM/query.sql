@@ -3,5 +3,9 @@
 		where sold is true
 */
 
-SELECT COUNT(*) AS total_sold FROM cars
-	WHERE sold IS TRUE;
+SELECT
+	AVG(price),
+	MAX(price),
+	MIN(price)
+FROM cars
+	AND sold IS TRUE
