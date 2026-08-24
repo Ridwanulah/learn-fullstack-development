@@ -14,10 +14,10 @@ const server = http.createServer(async (req, res) => {
      hint.md for help!
 */
 
-  const urlObj = // Use the URL constructor and pass in the relative and base urls.
+  const urlObj = new URL(req.url, `http://${req.headers.host}`) // Use the URL constructor and pass in the relative and base urls.
 
-  const queryObj = // Use the fromEntries() method on the Object class .
-                   // What do you need to pass in? 
+  const queryObj = Object.fromEntries(urlObj) // Use the fromEntries() method on the Object class .
+                   // What do you need to pass in?
 
   console.log(queryObj)
 
@@ -38,15 +38,15 @@ const server = http.createServer(async (req, res) => {
     const filteredData = getDataByPathParams(destinations, 'country', country)
     sendJSONResponse(res, 200, filteredData)
 
-  } 
-  
+  }
+
   else {
 
     res.setHeader('Content-Type', 'application/json')
     sendJSONResponse(res, 404, ({
       error: "not found",
       message: "The requested route does not exist"
-    }))   
+    }))
 
   }
 })

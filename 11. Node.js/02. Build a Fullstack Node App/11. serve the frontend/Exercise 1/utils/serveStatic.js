@@ -5,18 +5,19 @@ import { getContentType } from './getContentType.js'
 
 export async function serveStatic(req, res, baseDir) {
   /*
-Challenge: 
+Challenge:
   1. Write code below to serve files from our public directory.
-     
+
      Don’t worry about handling errors for now.
      hint.md for help!
 */
 
   const filePath = path.join(baseDir, 'public', 'index.html')
 
-  try { 
+  try {
     const content = await fs.readFile(filePath)
-    sendResponse(res, 200, 'text/html', content)
+    const ext = getContentType(path.extname(filePath))
+    sendResponse(res, 200, ext, content)
 
   } catch (err) {
     console.log(err)

@@ -5,12 +5,16 @@ const PORT = 8000
 
 const server = http.createServer(async (req, res) => {
   const destinations = await getDataFromDB()
-
+  console.log(req.url)
   if (req.url === '/api' && req.method === 'GET') {
     res.setHeader('Content-Type', 'application/json')
     res.statusCode = 200
     res.end(JSON.stringify(destinations))
-  } else if (x) {
+  } else if (req.url.startsWith('/api/continent') && req.method === 'GET') {
+    const continent = req.url.split('/').pop()
+    const filteredData = destinations.filter((destination) => {
+      return destination.continent.toLowerCase() === continent.toLowerCase()
+    })
   /*
   Challenge:
   1. Check if the url starts with “/api/continent”.

@@ -7,13 +7,15 @@ const server = http.createServer( (req, res)=> {
 
   console.log(req.url)
 
+
+  if (req.url === '/api') {
+    res.end('This is from the server')
+  }
 /*
 Challenge:
-Check the ‘url’ property on the req object. 
+Check the ‘url’ property on the req object.
 Only serve our string if it’s ‘/api’.
 */
-
-  res.end('This is from the server')
 
 })
 

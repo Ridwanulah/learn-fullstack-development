@@ -1,0 +1,12 @@
+{
+  "name": "from-the-other-side",
+  "version": "1.0.0",
+  "description": "\"A platform for sharing ghostly encounters\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo Server is rendering ",
+    "start": "node server.js"
+  },
+  "author": "Ridwan Abdulkareem",
+  "license": "ISC"
+}

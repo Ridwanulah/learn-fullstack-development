@@ -5,10 +5,12 @@ export async function handleGet(res) {
   const data = await getData()
   const content = JSON.stringify(data)
   sendResponse(res, 200, 'application/json', content)
-}  
+}
 
 // handlePost
-
+export function handlePost(req, res) {
+  console.log('POST request received')
+}
 /*
 Challenge:
   1. Create and export a function called handlePost().

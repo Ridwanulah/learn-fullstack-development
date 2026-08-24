@@ -11,9 +11,16 @@ const server = http.createServer(async (req, res) => {
     res.statusCode = 200
     res.end(JSON.stringify(destinations))
   } else {
+    res.setHeader('Content-Type', 'application/json')
+    res.statusCode = 404
+    res.end(JSON.stringify({
+      error: "not found",
+      message: "The requested route does not exist"
+    })
+    )
 /*
 Challenge:
-  1. If the client tries to access a route that isn’t covered by the above, send this object: 
+  1. If the client tries to access a route that isn’t covered by the above, send this object:
       {error: "not found", message: "The requested route does not exist"}
   Think: what do we need to send along with the data?
 */

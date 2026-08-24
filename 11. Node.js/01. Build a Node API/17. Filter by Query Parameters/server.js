@@ -14,14 +14,14 @@ const server = http.createServer(async (req, res) => {
   const queryObj = Object.fromEntries(urlObj.searchParams)
 
   if (urlObj.pathname === '/api' && req.method === 'GET') {
-    
-    let filteredData = destinations
-  
+
+    let filteredData = getDataByQueryParams(destinations, queryObj)
+
 /*
 Challenge:
 
-  1. Update filteredData so it holds only the objects the client wants 
-     based on query params. If the client doesn’t use any query params, 
+  1. Update filteredData so it holds only the objects the client wants
+     based on query params. If the client doesn’t use any query params,
      serve all of the data.
      The query params we are accepting are:
      'country', 'continent', and 'is_open_to_public'.
@@ -43,15 +43,15 @@ Challenge:
     const filteredData = getDataByPathParams(destinations, 'country', country)
     sendJSONResponse(res, 200, filteredData)
 
-  } 
-  
+  }
+
   else {
 
     res.setHeader('Content-Type', 'application/json')
     sendJSONResponse(res, 404, ({
       error: "not found",
       message: "The requested route does not exist"
-    }))   
+    }))
 
   }
 })
