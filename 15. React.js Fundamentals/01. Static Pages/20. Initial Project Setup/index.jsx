@@ -1,4 +1,5 @@
 import { createRoot } from "react-dom/client"
+import { App } from "./App.jsx"
 const root = createRoot(document.getElementById("root"))
 
 /**
@@ -8,7 +9,7 @@ Challenge: Project setup
   to this index.jsx file.
 - Create a `components` folder
 - Create the following components in separate files inside
-  the components folder. In each one, just render an `h1` 
+  the components folder. In each one, just render an `h1`
   with the name of the component (e.g. return <h1>Navbar goes here</h1>):
     - Navbar
     - Main
@@ -18,8 +19,10 @@ Challenge: Project setup
       in the mini-browser.
 - Go to Google fonts and get the "Inter" font with weights 400, 600, and 700.
   Put the `<links />` to those fonts ABOVE the style.css link in index.html.
-  You may need to do some extra research to figure out how this 
+  You may need to do some extra research to figure out how this
   works if you haven't done it before.
 */
 
-root.render(/*App component rendered here*/)
+root.render(
+    <App />
+)

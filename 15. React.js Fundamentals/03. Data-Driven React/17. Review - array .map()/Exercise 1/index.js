@@ -6,19 +6,21 @@ const nums = [1, 2, 3, 4, 5]
 // -->       [1, 4, 9, 16, 25]
 // Your code here
 
+nums.map(num => num * num);
+
 
 
 
 /*
 Challenge 2:
-Given an array of strings, return an array where 
+Given an array of strings, return an array where
 the first letter of each string is capitalized
 */
 
 const names = ["alice", "bob", "charlie", "danielle"]
 // -->        ["Alice", "Bob", "Charlie", "Danielle"]
 // Your code here
-
+names.map(name => name[0].toUpperCase())
 
 
 
@@ -35,4 +37,4 @@ const pokemon = ["Bulbasaur", "Charmander", "Squirtle"]
 // -->          ["<p>Bulbasaur</p>", "<p>Charmander</p>", "<p>Squirtle</p>"]
 // Your code here
 
-
+const pokemons = pokemon.map(pokemon => `<p>${pokemon}</p>`)

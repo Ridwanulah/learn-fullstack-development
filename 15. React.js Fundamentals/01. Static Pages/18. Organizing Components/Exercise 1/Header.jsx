@@ -1,4 +1,4 @@
-function Header() {
+export function Header() {
     return (
         <header className="header">
             <img src="react-logo.png" className="nav-logo" alt="React logo" />

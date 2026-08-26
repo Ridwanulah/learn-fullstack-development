@@ -1,10 +1,10 @@
 /**
  * Challenge: Build out the Entry component and render 1 instance of it
  * to the App
- * 
+ *
  * For now, just hard-code in the data, which you can find in
  * japan.md so you don't have to type it all out manually :)
- * 
+ *
  * Notes:
  * – Only render 1 instance of this Entry component for now
  * – I've pulled in marker.png for the little map marker icon
@@ -13,3 +13,25 @@
  *   currently are, so don't worry about the fact that you're hard-coding all
  *   this data into the component.
  */
+
+export function EntryComponent(){
+    return(
+        <article className="entry-card">
+            <img
+                className="entry-card__image"
+                src="./images/mount-fuji.png"
+                alt="Mount Fuji"
+            />
+            <div className="entry-card__text">
+                <p>
+                    <img src="../images/marker.png" alt="marker"/>
+                    <h6>Japan</h6>
+                    <a href="https://www.google.com/maps/place/Mount+Fuji/@35.3606421,138.7170637,15z/data=!3m1!4b1!4m6!3m5!1s0x6019629a42fdc899:0xa6a1fcc916f3a4df!8m2!3d35.3606255!4d138.7273634!16zL20vMGNrczA?entry=ttu">View on Google Maps</a>
+                </p>
+                <h2>Mount Fuji</h2>
+                <h6>12 Jan, 2021 - 24 Jan, 2021</h6>
+                <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+            </div>
+        </article>
+    )
+}

@@ -1,7 +1,8 @@
 import {createRoot} from "react-dom/client"
+import App from "./App"
 /**
  * Challenge:
- * 
+ *
  * - Create an App component in a separate file.
  *   Import it here and render it
  * - Create a "components" folder and a Header component.
@@ -11,4 +12,4 @@ import {createRoot} from "react-dom/client"
  */
 
 const root = createRoot(document.getElementById("root"))
-root.render(/* Render App component here*/)
+root.render(<App />)
