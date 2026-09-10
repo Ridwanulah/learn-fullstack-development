@@ -13,9 +13,10 @@ function App() {
         <label htmlFor="email">Email:</label>
         <input id="email" type="email" name="email" placeholder="joe@schmoe.com" />
         <br />
-        
-        
-        
+        <label htmlFor="password">Password:</label>
+        <input type="password" name="password" id="password" />
+
+
       </form>
     </section>
   )

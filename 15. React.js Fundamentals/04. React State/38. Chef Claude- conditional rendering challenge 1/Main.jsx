@@ -12,7 +12,8 @@ export default function Main() {
         const newIngredient = formData.get("ingredient")
         setIngredients(prevIngredients => [...prevIngredients, newIngredient])
     }
-    
+
+
     /**
      * Challenge:
      * Using conditional rendering, only render the new <section> IF
@@ -30,7 +31,7 @@ export default function Main() {
                 />
                 <button>Add ingredient</button>
             </form>
-            <section>
+            {ingredients.length > 0 && <section>
                 <h2>Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
                 <div className="get-recipe-container">
@@ -41,6 +42,7 @@ export default function Main() {
                     <button>Get a recipe</button>
                 </div>
             </section>
+            }
         </main>
     )
 }

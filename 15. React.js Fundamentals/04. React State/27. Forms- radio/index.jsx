@@ -5,14 +5,15 @@ function App() {
   /**
    * Challenge: grab the employment status from the form and log it
    * to the console. (Remember to select one of the radios before submitting)
-   * 
+   *
    * Note: This won't work the way you might expect quite yet!
    */
 
   function signUp(formData) {
     const email = formData.get("email")
     const password = formData.get("password")
-    console.log(password)
+    const employmentStatus = formData.get("employmentStatus")
+    console.log(password, email, employmentStatus)
   }
 
   return (

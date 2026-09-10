@@ -1,3 +1,4 @@
+import { useState } from "react"
 export default function Main() {
 
     /**
@@ -12,6 +13,8 @@ export default function Main() {
         <li key={ingredient}>{ingredient}</li>
     ))
 
+    const [stateNewIngredient, setStateNewIngredient] = useState([])
+
     function handleSubmit(event) {
         /**
          * Like before, don't worry about this FormData stuff yet.
@@ -21,6 +24,7 @@ export default function Main() {
         event.preventDefault()
         const formData = new FormData(event.currentTarget)
         const newIngredient = formData.get("ingredient")
+        setStateNewIngredient(prevState => [...prevState, newIngredient])
     }
 
     return (
